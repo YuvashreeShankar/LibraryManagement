@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Management System</title>
+<style>
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	width:2600px;
+	background-color:cyan;
+	overflow:hidden;
+}
+li
+{
+	float: left;
+}
+li a{
+	border:double;
+	margin: 50px 50px 50px 50x;
+	padding: 50px  80px 50px 80px;
+	text-decoration: none;
+}
+li a.active{
+	background-color:gray;
+	color:white;
+}
+li a:hover{
+	background-color:green;
+	color:white;
+}
+#f0{
+	text-align: justify;
+	font-family: cursive;
+	color: purple;
+}
+h3{
+	text-align: justify;
+	font-family: cursive;
+	color:green;
+}
+h2{
+	text-align: center;
+	font-family: cursive;
+}
+</style>
+<script>
+function validate(id,pass){
+	var aid=id;
+	var apass=pass;
+	if(aid==""){
+		//document.getElementById("msg").innerHTML="<font color='red'>Enter ID</font>";
+		alert("Enter ID");
+	}else  if(apass==""){
+		//document.getElementById("msg").innerHTML="<font color='red'>Enter Password</font>";
+		alert("Enter password");
+	}else{
+		open("books.html");
+		close("UserLogin.html");
+        }
+}
+</script>
+</head>
+<body background="index.jpg">
+<div id=f0>
+<h1>EduLib</h1>
+</div>
+<ul>
+<li><a  href="index.html">Home</a></li>
+<li><a class="active" href="UserLogin.html">Login</a></li>
+<li><a  href="UserRegister.html">Register</a></li>
+<li><a  href="about.html">About US</a></li>
+<li><a  href="Admin_login.html">Admin Login</a></li>
+</ul>
+<center>
+<br><br>
+<table border="2" bgcolor="magenta"><br><br>
+<tr style="font-size: xx-large;"><th colspan="2">User Login</th></tr>
+<tr><td>Enter user id:</td><td><input type="text" name='aid'></td></tr>
+<tr><td>Enter password:</td><td><input type="password" name='apass'></td></tr>
+<tr><th colspan="2"><input type="button" value="Login" onclick="validate(aid.value,apass.value)"></th></tr>
+</table>
+<h3><center>Not yet registered?</center></h3>
+<h2><a href="UserRegister.html">Register here</a></h2>
+<div id="msg"></div>
+</center>
+</body>
+</html>

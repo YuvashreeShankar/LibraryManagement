@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Management System</title>
+<script>
+function validate(id,pass){
+	var aid=id;
+	var apass=pass;
+	if(aid==""){
+		//document.getElementById("msg").innerHTML="<font color='red'>Enter ID</font>";
+		alert("Enter ID");
+	}else  if(apass==""){
+		//document.getElementById("msg").innerHTML="<font color='red'>Enter Password</font>";
+		alert("Enter password");
+	}else if(aid=="admin" && apass=="admin"){
+		open("Admin_home.html")
+		}else{
+			//document.getElementById("msg").innerHTML="<font color='red'>Enter valid ID/Password</font>";
+			alert("Enter valid ID/Password");
+        }
+}
+</script>
+</head>
+<body background="admin_back.png">
+<center>
+<table border="2" bgcolor="cyan"><br><br>
+<tr><th colspan="2">Admin Login</th></tr>
+<tr><th colspan="2"><img src= "Admin.png" width="100" height="100"></th></tr>
+<tr><td>Enter admin id:</td><td><input type="text" name='aid'></td></tr>
+<tr><td>Enter password:</td><td><input type="password" name='apass'></td></tr>
+<tr><th colspan="2"><input type="button" value="Login" onclick="validate(aid.value,apass.value)"></th></tr>
+</table>
+<div id="msg"></div><br><br>
+<a href="index.html">Back To Home</a>
+</center>
+</body>
+</html>

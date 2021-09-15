@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Management System</title>
+<style type="text/css">
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	width:2600px;
+	background-color:cyan;
+	overflow:hidden;
+}
+li
+{
+	float: left;
+}
+li a{
+	border:double;
+	margin: 50px 50px 50px 50x;
+	padding: 50px  80px 50px 80px;
+	text-decoration: none;
+}
+li a.active{
+	background-color:gray;
+	color:white;
+}
+li a:hover{
+	background-color:green;
+	color:white;
+}
+#f0{
+	text-align: justify;
+	font-family: cursive;
+	color: purple;
+}
+
+</style>
+<script type="text/javascript">
+function validform() {
+	var name=document.myform.name.value;
+	var password1=document.myform.password.value;
+	var password2=document.myform.password2.value;
+	var x=document.myform.email.value;
+	var ampposition=x.indexOf('@');
+	var dotposition=x.indexOf('.');
+	var num=document.myform.phn.value;
+	if(name==null || name==""){
+		alert("Name cannot be blank");
+		return false;
+	}
+	else if(ampposition<1||dotposition<ampposition+2||dotposition+2>=x.length){
+		alert("email not valid");
+		return false;
+	}
+	else if(isNaN(num)){
+		alert("Enter a 10 digit numeric value only for Phone number");
+		return false;
+	}
+	else if(password1.length<6){
+		alert("password must be greater than 6 char");
+		return false;
+	}
+	else if(password1==password2){
+		open("books.html");
+		close("UserRegister.html");
+	}else {
+		alert("Password must be same");
+		return false;
+	}
+}
+
+</script>
+</head>
+<body background="index.jpg">
+<div id=f0>
+<h1>EduLib</h1>
+</div>
+<ul>
+<li><a  href="index.html">Home</a></li>
+<li><a  href="UserLogin.html">Login</a></li>
+<li><a class="active" href="UserRegister.html">Register</a></li>
+<li><a  href="about.html">About US</a></li>
+</ul>
+<center>
+<h2 style="font-size: xx-large;"><b>Register Here</b></h2>
+<form name="myform" method="post" onsubmit="return validform()">
+<table border="3" bgcolor="yellow">
+<tr><th colspan="2">User Details</th></tr>
+<tr><td>Enter Username:</td><td><input type="text" name="name"></td></tr>
+<tr><td>Enter Address:</td><td><input type="text" name="addr"></td></tr><tr>
+<td>Enter Phone Number:</td><td><input type="text" name="phn"></td></tr><tr>
+<td>Enter Email:</td><td><input type="text" name="email"></td></tr>
+<tr><td>Your Gender:</td><td>
+<input type="radio" name="g" value="female">Female
+<input type="radio" name="g" value="male">Male</td></tr>
+<tr><td>Enter Password</td><td><input type="password" name="password"><td></tr>
+<tr><td>Re-Enter Password</td><td><input type="password" name="password2"><td></tr>
+<tr><td colspan="2"><center><input type="submit" value="Save"></center></td></tr>
+</center>
+</body>
+</html>
